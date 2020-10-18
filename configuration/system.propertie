@@ -1,0 +1,4 @@
+org.kie.server.user = kieserver
+org.kie.server.pwd = kieserver1!
+org.kie.server.id = pam-kie-server-01
+kie.maven.settings.custom = /home/jboss/jboss-eap-7.3/standalone/configuration/settings.xml
