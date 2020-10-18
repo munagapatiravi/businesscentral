@@ -15,7 +15,7 @@ ADD configuration/settings.xml /usr/local/.m2/
 ADD configuration/settings.xml $JBOSS_HOME/standalone/configuration/
 ADD configuration/application-users.properties $JBOSS_HOME/standalone/configuration/
 ADD configuration/application-roles.properties $JBOSS_HOME/standalone/configuration/
-ADD configuration/system.propertie $JBOSS_HOME/bin/		
+ADD configuration/system.properties $JBOSS_HOME/bin/		
 ADD application/business-central.war $JBOSS_HOME/standalone/deployments/
 ADD application/business-central.war.deployed $JBOSS_HOME/standalone/deployments/
 
