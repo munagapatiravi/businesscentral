@@ -51,11 +51,12 @@
         <property name="org.kie.server.location" value="http://172.17.0.2:8181/kie-server/services/rest/server"/>
         <property name="org.kie.server.controller" value="http://172.17.0.2:8181/business-central/rest/controller"/>
         
+		<property name="org.kie.server.persistence.ds" value="java:jboss/datasources/ExampleDS"/>
 		<!--<property name="org.kie.server.persistence.ds" value="java:jboss/datasources/KIEDS"/>
-        <property name="org.kie.server.persistence.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
-		 -->
-		<property name="org.kie.server.persistence.ds" value="java:/MySqlDS"/>
-        <property name="org.kie.server.persistence.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+        <property name="org.kie.server.persistence.dialect" value="org.hibernate.dialect.Oracle10gDialect"/> -->
+		 
+		<!-- <property name="org.kie.server.persistence.ds" value="java:/MySqlDS"/>
+        <property name="org.kie.server.persistence.dialect" value="org.hibernate.dialect.MySQL5Dialect"/> -->
         
 		<property name="kie.maven.settings.custom" value="/home/jboss/jboss-eap-7.3/standalone/configuration/settings.xml"/>
         <!-- <property name="org.quartz.properties" value="/users/gen/igwwrk1/OBP/kie-server-01/jboss-eap-7.1/standalone/configuration/quartz-definition.properties"/>
@@ -183,7 +184,7 @@
                     </security>
                 </datasource>
 				<datasource jta="true" jndi-name="java:/MySqlDS" pool-name="MySqlDS" enabled="true" use-ccm="false" statistics-enabled="true">
-                    <connection-url>jdbc:mysql://localhost:3306/ologw</connection-url>
+                    <connection-url>jdbc:mysql://localhost:3306/jbpm</connection-url>
                     <driver-class>com.mysql.jdbc.Driver</driver-class>
                     <driver>mysql</driver>
                     <security>
@@ -197,7 +198,7 @@
                     </validation>
                 </datasource>
                 <datasource jndi-name="java:jboss/datasources/KIEDS" pool-name="KIEDS">
-                    <connection-url>jdbc:oracle:thin:@inlnqw1912:1521:SKYDB1892</connection-url>
+                    <connection-url>jdbc:oracle:thin:@localhost:1521:jbpm</connection-url>
                     <driver>oracle</driver>
                     <pool>
                         <min-pool-size>10</min-pool-size>
@@ -206,8 +207,8 @@
                         <use-strict-min>false</use-strict-min>
                     </pool>
                     <security>
-                        <user-name>SKYOLOPAM1</user-name>
-                        <password>SKYOLOPAM1</password>
+                        <user-name>root</user-name>
+                        <password>root</password>
                     </security>
                     <validation>
                         <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"/>
