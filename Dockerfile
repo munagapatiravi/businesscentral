@@ -12,10 +12,15 @@ RUN mkdir -p /usr/local/.m2/repository
 
 ADD configuration/settings.xml /usr/local/.m2/
 
+COPY module/ $JBOSS_HOME/modules/
+
 ADD configuration/settings.xml $JBOSS_HOME/standalone/configuration/
+
+COPY configuration/standalone-full.xml $JBOSS_HOME/standalone/configuration/
+
 ADD configuration/application-users.properties $JBOSS_HOME/standalone/configuration/
 ADD configuration/application-roles.properties $JBOSS_HOME/standalone/configuration/
-ADD configuration/system.properties $JBOSS_HOME/bin/		
+
 ADD application/business-central.war $JBOSS_HOME/standalone/deployments/
 ADD application/business-central.war.deployed $JBOSS_HOME/standalone/deployments/
 ADD application/kie-server.war $JBOSS_HOME/standalone/deployments/
