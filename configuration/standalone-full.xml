@@ -42,8 +42,8 @@
         <extension module="org.wildfly.iiop-openjdk"/>
     </extensions>
     <system-properties>
-        <property name="org.kie.server.controller.user" value="pamAdmin"/>
-        <property name="org.kie.server.controller.pwd" value="pamAdmin123!"/>
+        <property name="org.kie.server.controller.user" value="webAdmin"/>
+        <property name="org.kie.server.controller.pwd" value="webAdmin123!"/>
 		<property name="org.kie.server.user " value="kieserver"/>
 		<property name="oorg.kie.server.pwd" value="kieserver1!"/>
         <property name="org.jbpm.var.log.length" value="4000"/>
