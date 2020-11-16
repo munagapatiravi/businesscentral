@@ -42,8 +42,8 @@
         <extension module="org.wildfly.iiop-openjdk"/>
     </extensions>
     <system-properties>
-        <property name="org.kie.server.controller.user" value="pamAdmin"/>
-        <property name="org.kie.server.controller.pwd" value="pamAdmin123!"/>
+        <property name="org.kie.server.controller.user" value="webAdmin"/>
+        <property name="org.kie.server.controller.pwd" value="webAdmin123!"/>
 		<property name="org.kie.server.user " value="kieserver"/>
 		<property name="oorg.kie.server.pwd" value="kieserver1!"/>
         <property name="org.jbpm.var.log.length" value="4000"/>
@@ -59,6 +59,8 @@
         <property name="org.kie.server.persistence.dialect" value="org.hibernate.dialect.MySQL5Dialect"/> -->
         
 		<property name="kie.maven.settings.custom" value="/home/jboss/jboss-eap-7.3/standalone/configuration/settings.xml"/>
+		<property name="org.uberfire.nio.git.hooks" value="/home/jboss/jboss-eap-7.3/hooks/"/>
+		<property name="org.uberfire.nio.git.dir" value="/home/jboss/jboss-eap-7.3/bin/"/>
         <!-- <property name="org.quartz.properties" value="/users/gen/igwwrk1/OBP/kie-server-01/jboss-eap-7.1/standalone/configuration/quartz-definition.properties"/>
         <property name="jbpm.loop.level.disabled" value="true"/>
         <property name="org.kie.prometheus.server.ext.disabled" value="false"/>-->

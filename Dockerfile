@@ -14,6 +14,8 @@ ADD configuration/settings.xml /usr/local/.m2/
 
 COPY module/ $JBOSS_HOME/modules/
 
+COPY hooks/ $JBOSS_HOME/hooks/
+
 ADD configuration/settings.xml $JBOSS_HOME/standalone/configuration/
 
 COPY configuration/standalone-full.xml $JBOSS_HOME/standalone/configuration/
