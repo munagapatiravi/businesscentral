@@ -23,8 +23,6 @@ ADD configuration/application-roles.properties $JBOSS_HOME/standalone/configurat
 
 ADD application/business-central.war $JBOSS_HOME/standalone/deployments/
 ADD application/business-central.war.deployed $JBOSS_HOME/standalone/deployments/
-ADD application/kie-server.war $JBOSS_HOME/standalone/deployments/
-ADD application/kie-server.war.deployed $JBOSS_HOME/standalone/deployments/
 
 EXPOSE 8181/tcp 9990 7600 8888  
 ENTRYPOINT $JBOSS_HOME/docker-entrypoint.sh
