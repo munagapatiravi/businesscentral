@@ -1,7 +1,7 @@
 O#This is an auto generated template empty property file
 #Thu Jul 09 16:57:07 UTC 2020
 gitlabGroup=Group/subgroup
-token=d80342fdae0ff6b3d10c97707d1fc44cbdec92c3
+token=40a65ad00226a9b68b0b1a7bdd5ccf8de2a1654d
 useSSH=false
 ignore=.*demo.*, test.*
 remoteGitUrl=https://api.github.com/

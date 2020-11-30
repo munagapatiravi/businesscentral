@@ -12,8 +12,6 @@ RUN mkdir -p /usr/local/.m2/repository
 
 ADD configuration/settings.xml /usr/local/.m2/
 
-COPY module/ $JBOSS_HOME/modules/
-
 COPY hooks/ $JBOSS_HOME/hooks/
 
 ADD configuration/settings.xml $JBOSS_HOME/standalone/configuration/
@@ -27,7 +25,6 @@ ADD application/business-central.war $JBOSS_HOME/standalone/deployments/
 ADD application/business-central.war.deployed $JBOSS_HOME/standalone/deployments/
 ADD application/kie-server.war $JBOSS_HOME/standalone/deployments/
 ADD application/kie-server.war.deployed $JBOSS_HOME/standalone/deployments/
-
 
 EXPOSE 8181/tcp 9990 7600 8888  
 ENTRYPOINT $JBOSS_HOME/docker-entrypoint.sh

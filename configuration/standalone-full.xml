@@ -42,28 +42,15 @@
         <extension module="org.wildfly.iiop-openjdk"/>
     </extensions>
     <system-properties>
-        <property name="org.kie.server.controller.user" value="webAdmin"/>
-        <property name="org.kie.server.controller.pwd" value="webAdmin123!"/>
 		<property name="org.kie.server.user " value="kieserver"/>
 		<property name="oorg.kie.server.pwd" value="kieserver1!"/>
-        <property name="org.jbpm.var.log.length" value="4000"/>
-        <property name="org.kie.server.id" value="pam-kie-server-01"/>
-        <property name="org.kie.server.location" value="http://172.17.0.2:8181/kie-server/services/rest/server"/>
-        <property name="org.kie.server.controller" value="http://172.17.0.2:8181/business-central/rest/controller"/>
-        
-		<property name="org.kie.server.persistence.ds" value="java:jboss/datasources/ExampleDS"/>
-		<!--<property name="org.kie.server.persistence.ds" value="java:jboss/datasources/KIEDS"/>
-        <property name="org.kie.server.persistence.dialect" value="org.hibernate.dialect.Oracle10gDialect"/> -->
-		 
-		<!-- <property name="org.kie.server.persistence.ds" value="java:/MySqlDS"/>
-        <property name="org.kie.server.persistence.dialect" value="org.hibernate.dialect.MySQL5Dialect"/> -->
-        
 		<property name="kie.maven.settings.custom" value="/home/jboss/jboss-eap-7.3/standalone/configuration/settings.xml"/>
 		<property name="org.uberfire.nio.git.hooks" value="/home/jboss/jboss-eap-7.3/hooks/"/>
 		<property name="org.uberfire.nio.git.dir" value="/home/jboss/jboss-eap-7.3/bin/"/>
-        <!-- <property name="org.quartz.properties" value="/users/gen/igwwrk1/OBP/kie-server-01/jboss-eap-7.1/standalone/configuration/quartz-definition.properties"/>
+		<!-- <property name="org.appformer.m2repo.url" value="file:///users/gen/igwwrk1/OBP/business-central/jboss-eap-7.1/bin/repositories/kie"/>
+        <property name="org.quartz.properties" value="/users/gen/igwwrk1/OBP/kie-server-01/jboss-eap-7.1/standalone/configuration/quartz-definition.properties"/>
         <property name="jbpm.loop.level.disabled" value="true"/>
-        <property name="org.kie.prometheus.server.ext.disabled" value="false"/>-->
+        <property name="org.kie.prometheus.server.ext.disabled" value="false"/> -->
     </system-properties>
     <management>
         <security-realms>
@@ -185,50 +172,9 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-				<datasource jta="true" jndi-name="java:/MySqlDS" pool-name="MySqlDS" enabled="true" use-ccm="false" statistics-enabled="true">
-                    <connection-url>jdbc:mysql://localhost:3306/jbpm</connection-url>
-                    <driver-class>com.mysql.jdbc.Driver</driver-class>
-                    <driver>mysql</driver>
-                    <security>
-                        <user-name>root</user-name>
-                        <password>root</password>
-                    </security>
-                    <validation>
-                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker"/>
-                        <background-validation>true</background-validation>
-                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter"/>
-                    </validation>
-                </datasource>
-                <datasource jndi-name="java:jboss/datasources/KIEDS" pool-name="KIEDS">
-                    <connection-url>jdbc:oracle:thin:@localhost:1521:jbpm</connection-url>
-                    <driver>oracle</driver>
-                    <pool>
-                        <min-pool-size>10</min-pool-size>
-                        <max-pool-size>30</max-pool-size>
-                        <prefill>true</prefill>
-                        <use-strict-min>false</use-strict-min>
-                    </pool>
-                    <security>
-                        <user-name>root</user-name>
-                        <password>root</password>
-                    </security>
-                    <validation>
-                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"/>
-                        <validate-on-match>true</validate-on-match>
-                        <background-validation>false</background-validation>
-                        <stale-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker"/>
-                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
-                    </validation>
-                </datasource>
-                <drivers>
+				<drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
-                    </driver>
-                    <driver name="oracle" module="com.oracle.jdbc">
-                        <xa-datasource-class>oracle.jdbc.xa.client.OracleXADataSource</xa-datasource-class>
-                    </driver>
-					<driver name="mysql" module="com.mysql">
-                        <driver-class>com.mysql.jdbc.Driver</driver-class>
                     </driver>
                 </drivers>
             </datasources>
